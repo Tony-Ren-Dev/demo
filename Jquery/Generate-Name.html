@@ -20,38 +20,60 @@
 
         <form>
             <div class="form-group">
+			<div class="col-xs-12">
                 <label for="InputName">Input:</label>
                 <input type="text" class="form-control" id="InputName"> </input>
             </div>
-            <div class="form-group">
-                <label for="Output">Output:</label>
-                <div id="OutputDIV"></div>
+			</div>
+			<div class="form-group">
+			<div class="col-xs-4">
+                <label for="InputName">Repalce With:</label>
+                <input type="text" class="form-control" id="RepalceWith" value="-"> </input>
+				</div>
             </div>
+			
+			
+			
+            <div class="form-group">
+			<div class="col-xs-12">
+                <label for="Output">Output:</label>
+                
+				 <input type="text" class="form-control" id="OutputDIV" > </input>
+				</div>
+            </div>
+			
         </form>
         <script>
             $("#InputName").keyup(function(event) {
                 changeFun();
 
             });
+			
+			$("#RepalceWith").keyup(function(event) {
+                changeFun();
 
-      function changeFun(){
-var currentVal=$('#InputName').val();
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-if(dd<10) {
-    dd='0'+dd
-} 
+            });
+			
+            function changeFun() {
+                var currentVal = $('#InputName').val();
+				var RepalceVal=$('#RepalceWith').val();
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                if (dd < 10) {
+                    dd = '0' + dd
+                }
 
-if(mm<10) {
-    mm='0'+mm
-} 
-var yyyy = today.getFullYear();
-//console.log(yyyy+'-'+mm+'-'+dd);
-console.log(currentVal.split(' ').join('_'));
-}
-
-
+                if (mm < 10) {
+                    mm = '0' + mm
+                }
+                var yyyy = today.getFullYear();
+                //console.log(yyyy+'-'+mm+'-'+dd);
+				//console.log(currentVal.split(' ').join(RepalceVal));
+				//console.log(RepalceVal);
+				var outputval=yyyy+'-'+mm+'-'+dd+'-'+currentVal.split(' ').join(RepalceVal)+'.markdown';
+				$('#OutputDIV').val(outputval);
+            }
         </script>
     </div>
 
