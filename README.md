@@ -16,7 +16,7 @@ https://demo-project-tonyrenhk.c9users.io/
 
 
 
-git add -A;git commit -m "Tony-20160916- add ResizableJS";git remote add q2 https://github.com/Tony-Ren-Dev/demo.git;git push -u q2 master
+git add -A;git commit -m "Tony-20160916- add ResizableJS 2";git remote add q3 https://github.com/Tony-Ren-Dev/demo.git;git push -u q3 master
 
 
 cd renchk.github.io
